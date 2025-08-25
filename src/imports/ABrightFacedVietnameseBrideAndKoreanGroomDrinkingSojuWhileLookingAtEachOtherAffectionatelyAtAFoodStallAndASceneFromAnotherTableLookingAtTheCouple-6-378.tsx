@@ -1,0 +1,5 @@
+import imgABrightFacedVietnameseBrideAndKoreanGroomDrinkingSojuWhileLookingAtEachOtherAffectionatelyAtAFoodStallAndASceneFromAnotherTableLookingAtTheCouple from "figma:asset/434adaa480fc496a485b3b8188991983e9fa5ff5.png";
+
+export default function ABrightFacedVietnameseBrideAndKoreanGroomDrinkingSojuWhileLookingAtEachOtherAffectionatelyAtAFoodStallAndASceneFromAnotherTableLookingAtTheCouple() {
+  return <div className="bg-center bg-cover bg-no-repeat size-full" data-name="A bright-faced Vietnamese bride and Korean groom drinking soju while looking at each other affectionately at a food stall, and a scene from another table looking at the couple." style={{ backgroundImage: `url('${imgABrightFacedVietnameseBrideAndKoreanGroomDrinkingSojuWhileLookingAtEachOtherAffectionatelyAtAFoodStallAndASceneFromAnotherTableLookingAtTheCouple}')` }} />;
+}
