@@ -111,12 +111,18 @@ export default function App() {
                   제시합니다.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-8"
+                  <a 
+                    href="https://pf.kakao.com/_HLxhxmn/chat" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                   >
-                    상담 신청하기
-                  </Button>
+                    <Button
+                      size="lg"
+                      className="bg-gray-900 hover:bg-gray-800 text-white px-8"
+                    >
+                      상담 신청하기
+                    </Button>
+                  </a>
                   <Button
                     size="lg"
                     variant="outline"
@@ -640,13 +646,19 @@ export default function App() {
                   </div>
                 </div>
 
-                <Button
-                  size="lg"
-                  className="bg-gray-900 hover:bg-gray-800 text-white px-8"
+                <a 
+                  href="https://pf.kakao.com/_HLxhxmn/chat" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  지금 상담 신청하기
-                </Button>
+                  <Button
+                    size="lg"
+                    className="bg-gray-900 hover:bg-gray-800 text-white px-8"
+                  >
+                    <Phone className="w-4 h-4 mr-2" />
+                    지금 상담 신청하기
+                  </Button>
+                </a>
               </div>
 
               <div className="relative">
