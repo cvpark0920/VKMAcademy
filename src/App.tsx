@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "./components/ui/button";
 import {
   Card,
@@ -22,8 +23,11 @@ import {
   Dumbbell,
   MessageCircle,
   Menu,
+  X,
 } from "lucide-react";
+import React from "react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import { Sheet, SheetContent, SheetTrigger } from "./components/ui/sheet";
 import ABrightFacedVietnameseBrideAndKoreanGroomDrinkingSojuWhileLookingAtEachOtherAffectionatelyAtAFoodStallAndASceneFromAnotherTableLookingAtTheCouple from "./imports/ABrightFacedVietnameseBrideAndKoreanGroomDrinkingSojuWhileLookingAtEachOtherAffectionatelyAtAFoodStallAndASceneFromAnotherTableLookingAtTheCouple";
 import educationImage from "figma:asset/564876bca063e0fcf64f1902aaf701243177c850.png";
 import expertTeamImage from "figma:asset/564876bca063e0fcf64f1902aaf701243177c850.png";
@@ -36,6 +40,16 @@ import HeaderNavigationBarImmersiveWithImageCarousel from "./imports/HeaderNavig
 import consultationImage from "figma:asset/b9c22303d016de8e1f776e19f7113e352465c477.png";
 
 export default function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Fixed Header */}
@@ -85,10 +99,58 @@ export default function App() {
             variant="outline"
             size="sm"
             className="md:hidden"
+            onClick={toggleMobileMenu}
           >
-            <Menu className="w-4 h-4" />
+            {isMobileMenuOpen ? (
+              <X className="w-4 h-4" />
+            ) : (
+              <Menu className="w-4 h-4" />
+            )}
           </Button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100">
+            <nav className="px-6 py-4 space-y-4">
+              <a
+                href="#about"
+                className="block text-gray-600 hover:text-gray-900 transition-colors text-sm py-2"
+                onClick={closeMobileMenu}
+              >
+                소개
+              </a>
+              <a
+                href="#experts"
+                className="block text-gray-600 hover:text-gray-900 transition-colors text-sm py-2"
+                onClick={closeMobileMenu}
+              >
+                전문가팀
+              </a>
+              <a
+                href="#verification"
+                className="block text-gray-600 hover:text-gray-900 transition-colors text-sm py-2"
+                onClick={closeMobileMenu}
+              >
+                검증시스템
+              </a>
+              <a
+                href="#education"
+                className="block text-gray-600 hover:text-gray-900 transition-colors text-sm py-2"
+                onClick={closeMobileMenu}
+              >
+                교육과정
+              </a>
+              <a
+                href="#contact"
+                className="block text-gray-600 hover:text-gray-900 transition-colors text-sm py-2"
+                onClick={closeMobileMenu}
+              >
+                연락처
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Main Content with top padding to account for fixed header */}
